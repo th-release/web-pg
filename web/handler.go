@@ -1,6 +1,7 @@
 package web
 
 import (
+	"cth.release/web-pg/web/auth"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 )
@@ -29,6 +30,8 @@ func (s *ServerConfig) SetupRoutes(app *fiber.App) *fiber.App {
 
 	api := app.Group("/api", EmptyMiddleware)
 	api.Get("/health", HealthHandler)
+
+	auth.SetupRoutes(api)
 
 	return app
 }
