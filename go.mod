@@ -2,7 +2,10 @@ module cth.release/web-pg
 
 go 1.24.5
 
-require github.com/gofiber/fiber/v2 v2.52.9
+require (
+	github.com/gofiber/fiber/v2 v2.52.9
+	github.com/golang-jwt/jwt/v4 v4.5.2
+)
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect
